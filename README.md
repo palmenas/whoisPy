@@ -1,20 +1,28 @@
-#check_ips.py
+# check_ips.py
 Script used to query through a list of ip addresses and request Whois information
 
-#Usage
-```$ ./check_ips.py base-ips.txt```
+# Usage
+```
+$ ./check_ips.py base-ips.txt
+```
 
-#How-To
+# How-To
 Vai criar um arquivo json chamado result.txt
 
 Limpar o arquivo usando o sed:
-```$ sed -f script.sed result.txt > result.json```
+```
+$ sed -f script.sed result.txt > result.json
+```
 
 Usar query do jq para escolher os campos necessários:
-```$ jq '.query' result.json```
+```
+$ jq '.query' result.json
+```
 
 Melhor query até agora:
-```$ jq  '[.query,.asn_description,.asn_country_code,.entities[]] | @csv' result.json```
+```
+$ jq  '[.query,.asn_description,.asn_country_code,.entities[]] | @csv' result.json
+```
 
 Substituir os caracteres especiais que estão em HEX por letras normais.
 
